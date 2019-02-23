@@ -1,0 +1,413 @@
+Prefix: : <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3>
+
+
+ObjectProperty: areWheelsOf
+
+    SubPropertyOf: 
+        hasPart
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasWheels
+    
+    
+ObjectProperty: hasCabin
+
+    SubPropertyOf: 
+        hasPart
+    
+    InverseOf: 
+        isCabinOf
+    
+    
+ObjectProperty: hasChassis
+
+    SubPropertyOf: 
+        hasPart
+    
+    InverseOf: 
+        isChassisOf
+    
+    
+ObjectProperty: hasMotor
+
+    SubPropertyOf: 
+        hasPart
+    
+    InverseOf: 
+        isMotorOf
+    
+    
+ObjectProperty: hasPart
+
+    
+ObjectProperty: hasWheels
+
+    SubPropertyOf: 
+        hasPart
+    
+    InverseOf: 
+        areWheelsOf
+    
+    
+ObjectProperty: isCabinOf
+
+    SubPropertyOf: 
+        hasPart
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasCabin
+    
+    
+ObjectProperty: isChassisOf
+
+    SubPropertyOf: 
+        hasPart
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasChassis
+    
+    
+ObjectProperty: isExpensive
+
+    Domain: 
+        cars
+    
+    Range: 
+        CostValuePartition
+    
+    
+ObjectProperty: isMotorOf
+
+    SubPropertyOf: 
+        hasPart
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasMotor
+    
+    
+Class: <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#2-seats>
+
+    SubClassOf: 
+        Cabin
+    
+    
+Class: <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#5-seats>
+
+    SubClassOf: 
+        Cabin
+    
+    
+Class: <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#8-seats>
+
+    SubClassOf: 
+        Cabin
+    
+    
+Class: <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#VR&W>
+
+    SubClassOf: 
+        Motor,
+        isExpensive some Expensive
+    
+    
+Class: Berlina
+
+    SubClassOf: 
+        cars
+    
+    
+Class: Boxer
+
+    SubClassOf: 
+        Motor
+    
+    
+Class: Buses
+
+    
+Class: Cabin
+
+    
+Class: Camper
+
+    SubClassOf: 
+        Vans
+    
+    
+Class: Chassis
+
+    
+Class: Chrysler
+
+    SubClassOf: 
+        Commercial,
+        hasCabin some <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#8-seats>,
+        hasWheels some steel,
+        isExpensive some Medium-cost
+    
+    
+Class: Commercial
+
+    SubClassOf: 
+        Vans
+    
+    
+Class: Convertible
+
+    SubClassOf: 
+        cars
+    
+    
+Class: CostValuePartition
+
+    
+Class: CostlyVehicle
+
+    
+Class: Coupé
+
+    SubClassOf: 
+        cars
+    
+    
+Class: Expensive
+
+    SubClassOf: 
+        Value
+    
+    
+Class: In-line
+
+    SubClassOf: 
+        Motor
+    
+    
+Class: Low-cost
+
+    SubClassOf: 
+        Value
+    
+    
+Class: Medium-cost
+
+    SubClassOf: 
+        Value
+    
+    
+Class: Mercedes
+
+    SubClassOf: 
+        Berlina,
+        hasCabin some <http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#5-seats>,
+        hasWheels some chrome,
+        isExpensive some Expensive
+    
+    
+Class: Motor
+
+    
+Class: Motorhome
+
+    SubClassOf: 
+        Vans
+    
+    
+Class: Pickup-truck
+
+    SubClassOf: 
+        Trucks
+    
+    
+Class: Rotary
+
+    SubClassOf: 
+        Motor,
+        isExpensive some Expensive
+    
+    
+Class: SUV
+
+    SubClassOf: 
+        cars
+    
+    
+Class: Straight
+
+    SubClassOf: 
+        Motor
+    
+    
+Class: Trucks
+
+    
+Class: VEE
+
+    SubClassOf: 
+        Motor,
+        isExpensive some Expensive
+    
+    
+Class: Value
+
+    EquivalentTo: 
+        Expensive or Low-cost or Medium-cost
+    
+    SubClassOf: 
+        CostValuePartition
+    
+    
+Class: Vans
+
+    
+Class: Wheels
+
+    
+Class: alloy
+
+    SubClassOf: 
+        rim
+    
+    
+Class: bus-frame
+
+    SubClassOf: 
+        Chassis
+    
+    
+Class: car-chassis
+
+    SubClassOf: 
+        Chassis
+    
+    
+Class: cars
+
+    SubClassOf: 
+        hasCabin some cars,
+        hasChassis some cars,
+        hasMotor some cars,
+        hasWheels some cars
+    
+    
+Class: chrome
+
+    SubClassOf: 
+        rim
+    
+    
+Class: high-speed
+
+    SubClassOf: 
+        tyre,
+        isExpensive some Expensive
+    
+    
+Class: many-seats
+
+    SubClassOf: 
+        Cabin
+    
+    
+Class: rim
+
+    SubClassOf: 
+        Wheels
+    
+    
+Class: sporty
+
+    SubClassOf: 
+        tyre,
+        isExpensive some Expensive
+    
+    
+Class: steel
+
+    SubClassOf: 
+        rim
+    
+    
+Class: summer
+
+    SubClassOf: 
+        tyre
+    
+    
+Class: touring
+
+    SubClassOf: 
+        tyre
+    
+    
+Class: truck-chassis
+
+    SubClassOf: 
+        Chassis
+    
+    
+Class: tyre
+
+    SubClassOf: 
+        Wheels
+    
+    
+Class: van-chassis
+
+    SubClassOf: 
+        Chassis
+    
+    
+Class: winter
+
+    SubClassOf: 
+        tyre
+    
+    
+DisjointClasses: 
+    Berlina,Convertible,Coupé,SUV
+
+DisjointClasses: 
+    Boxer,In-line,Rotary,Straight,VEE,<http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#VR&W>
+
+DisjointClasses: 
+    Buses,Trucks,Vans,cars
+
+DisjointClasses: 
+    Expensive,Low-cost,Medium-cost
+
+DisjointClasses: 
+    Trucks,Vans,cars
+
+DisjointClasses: 
+    alloy,chrome,steel
+
+DisjointClasses: 
+    bus-frame,car-chassis,truck-chassis,van-chassis
+
+DisjointClasses: 
+    high-speed,sporty,summer,touring,winter
+
+DisjointClasses: 
+    many-seats,<http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#2-seats>,<http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#5-seats>,<http://www.semanticweb.org/abdullah/ontologies/2018/11/untitled-ontology-3#8-seats>
+
